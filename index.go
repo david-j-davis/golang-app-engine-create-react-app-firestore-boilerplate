@@ -8,6 +8,7 @@ import (
 	"os"
 	"cloud.google.com/go/firestore"
 )
+// Continue where I left off: https://cloud.google.com/appengine/docs/standard/go/building-app/authenticating-users
 
 func userHandler(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
