@@ -1,0 +1,16 @@
+runtime: go111
+
+handlers:
+- url: /api/user
+  script: auto
+
+- url: /favicon.ico
+  static_files: build/favicon.ico
+  upload: build/favicon.ico
+
+- url: /
+  static_files: build/index.html
+  upload: build/index.html
+
+- url: /
+  static_dir: build
