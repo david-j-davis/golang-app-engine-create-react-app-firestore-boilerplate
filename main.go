@@ -10,7 +10,7 @@ import (
 )
 
 const firestoreAccountFile = "firebase.json"
-const firestoreProjectID = "golang-gae-firestore-template"
+const firestoreProjectID = "davisdavid-golang-playground"
 
 type formData struct {
 	Name  string `json:"name" binding:"required"`
