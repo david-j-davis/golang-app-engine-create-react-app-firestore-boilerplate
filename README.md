@@ -12,8 +12,7 @@ $ go mod init
 $ go mod tidy
 ```
 ## Setting Up Firebase Firestore
-For more info on how to set up your firebase service account `firebase.json` file, [go here](https://firebase.google.com/docs/admin/setup). You generate the json keys here: `https://console.firebase.google.com/u/1/project/<your_firebase_project_id>/settings/serviceaccounts/adminsdk`
-
-For use of other project [flags and services with gcloud deployments](https://cloud.google.com/sdk/gcloud/reference/services/), define those in your `deploy.sh` file. 
-
+* Make sure you enable Google Cloud Firestore API in the API's & Services section of your Google Cloud Platform project.
+* For more info on how to set up your firebase service account `firebase.json` file, [go here](https://firebase.google.com/docs/admin/setup). You generate the json keys here: `https://console.firebase.google.com/u/1/project/<your_firebase_project_id>/settings/serviceaccounts/adminsdk`
+* For use of other project [flags and services with gcloud deployments](https://cloud.google.com/sdk/gcloud/reference/services/), define those in your `deploy.sh` file. 
 * Finally, deploy your app with `$ npm run deploy`.
