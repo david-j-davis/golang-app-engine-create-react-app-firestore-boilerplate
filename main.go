@@ -38,6 +38,7 @@ func getNewFirestoreClient(ctx context.Context) (*firestore.Client, error) {
 	return firestore.NewClient(ctx, firestoreProjectID, option.WithServiceAccountFile(firestoreAccountFile))
 }
 
+// User enters the form fields to create a new user, which is then populated in our Firestore db.
 func userHandler(c *gin.Context) {
 	ctx := context.Background()
 

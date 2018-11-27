@@ -12,7 +12,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && gcloud app deploy --project=davisdavid-golang-playground"
+    "deploy": "npm run build && ./deploy.sh"
   },
   "eslintConfig": {
     "extends": "react-app"

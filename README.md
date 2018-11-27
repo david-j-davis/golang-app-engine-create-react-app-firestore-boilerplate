@@ -1,44 +1,17 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Go App Boilerplate on App Engine Standard go 1.11 runtime
 
-## Available Scripts
+Get started with Go 1.11 Standard by reading [documentation here](https://cloud.google.com/appengine/docs/standard/go111/). You'll need to create an App Engine project of course.
+Define your [app.yaml runtime settings](https://cloud.google.com/appengine/docs/standard/go111/config/appref).
+Build your Create React App with `npm run build` to create the `build` directory.
+Define your server and routing in your main.go file, and since we're serving up a [Create React App](https://github.com/facebook/create-react-app) front-end We're pointing the server to the `./build` directory for static files.
+For deploying go 1.11, we're using the go.mod method instead of the former GOPATH method. See documentation on that [update here](https://cloud.google.com/appengine/docs/standard/go111/go-differences).
+Use the following commands to create a go.mod before deployment:
+```
+$ export GO111MODULE=on  # required to use this module method
+$ go mod init
+$ go mod tidy
+```
+## Setting Up Firebase Firestore
+For more info on how to set up your firebase service account firebase.json file, [go here](https://firebase.google.com/docs/admin/setup). You generate them here: `https://console.firebase.google.com/u/1/project/<your_firebase_project_id>/settings/serviceaccounts/adminsdk`
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+For use of other project [flags and services with gcloud deployments](https://cloud.google.com/sdk/gcloud/reference/services/), define those in your `deploy.sh` file. Then deploy your app with `npm run deploy`.
